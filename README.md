@@ -25,36 +25,86 @@ Hold down the BOOTSEL button on your Raspberry Pi Pico (or Pico W) while pluggin
 
 ### Step 2: Format the Board (Optional but Recommended)
 This clears any existing data to avoid issues.  
-- **Option A (Original Source):** Download `flash_nuke.uf2` from [Mega.nz](https://mega.nz/file/8vIDgArS#CKuRw15vM3WzhA6j1P0y7U5iA2gRpjtfhXAJ3A3y8wA).  
+- **Option A (Original Source):** Download `flash_nuke.uf2` from [Mega.nz](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#resetting-flash-memory).  
 - **Option B (Direct):** Use `format.uf2` from the `/root` folder in this repository.  
 
 Copy the `.uf2` file to the Pico's drive. Wait for it to reboot automatically (the drive will disappear and reappear).
 
 ### Step 3: Install CircuitPython Firmware
 This enables Python scripting on the Pico.  
-- **Option A (Original Source):** Download the `.uf2` file for your board from [CircuitPython.org](https://circuitpython.org/board/raspberry_pi_pico/) (for Pico) or [CircuitPython.org Pico W](https://circuitpython.org/board/raspberry_pi_pico_w/).  
-- **Option B (Direct):** Use `circuitpython.uf2`  from the `/root` folder in this repository.  
+- **Option A (Original Source):** Download the `adafruit-circuitpython-raspberry_pi_pico2_w-en_US-10.0.0.uf2` file for your board from [CircuitPython.org](https://circuitpython.org/board/raspberry_pi_pico/) (for Pico) or [CircuitPython.org Pico W](https://circuitpython.org/board/raspberry_pi_pico_w/).  
+- **Option B (Direct):** Use `adafruit-circuitpython-raspberry_pi_pico2_w-en_US-10.0.0.uf2`  from the `/` folder in this repository.  
 
 Copy the `.uf2` file to the Pico's drive. Wait for reboot. The drive should now be named "CIRCUITPY".
 
 ### Step 4: Add the HID Library
 This library allows the Pico to act as a keyboard (Human Interface Device).  
 - **Option A (Original Source):** Download `adafruit-circuitpython-bundle-6.x-mpy-20210130.zip` (or latest) from [Adafruit GitHub](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases). Unzip, navigate to the `lib` folder, and copy the `adafruit_hid` folder.  
+
+From there, copy the following items into the /lib folder on the "CIRCUITPY" drive:
+
+    adafruit_hid (folder)
+
+    adafruit_debouncer.mpy
+
+    adafruit_ticks.mpy
+
+    asyncio (folder)
+
+    adafruit_wsgi (folder)
+
+Then, copy these files to the root directory of the "CIRCUITPY" drive:
+
+    boot.py
+
+    duckyinpython.py
+
+    code.py
+
+    webapp.py
+
+    wsgiserver.py
+
+All of these files are available in the official Adafruit bundle or can be found in the original project repository.
+
+
 - **Option B (Direct):** Copy the `adafruit_hid` folder from the `/lib` folder in this repository.  
 
 Paste the `adafruit_hid` folder into the `/lib` directory on the "CIRCUITPY" drive.
 
+    adafruit_hid (folder)
+
+    adafruit_debouncer.mpy
+
+    adafruit_ticks.mpy
+
+    asyncio (folder)
+
+    adafruit_wsgi (folder)
+
+Then, copy the following files from the repository to the root of the "CIRCUITPY" drive:
+
+    boot.py
+
+    duckyinpython.py
+
+    code.py
+
+    webapp.py
+
+    wsgiserver.py
+
 ### Step 5: Install the Ducky Script Interpreter
 This script (based on pico-ducky) interprets and runs payloads.  
 - **Option A (Original Source):** Download `pico-ducky-main.zip` from [dbisu/pico-ducky](https://github.com/dbisu/pico-ducky). Unzip and copy `duckyinpython.py`.  
-- **Option B (Direct):** Use `duckyinpython.py` from the `/src` folder in this repository.  
+- **Option B (Direct):** Use `duckyinpython.py` from the `/` folder in this repository.  
 
 Copy the file to the root of the "CIRCUITPY" drive. Delete any existing `code.py` (if present) and rename `duckyinpython.py` to `code.py`.  
 **Note:** The Pico will now auto-run `code.py` on connection, making it a "BadUSB".
 
 ### Step 6: Add a Payload Script
 Payloads are scripts that run as keyboard inputs (e.g., opening apps, typing commands). For examples:  
-- **Option A (Original Sources):** Browse payloads from [Hak5 USB Rubber Ducky Payloads](https://github.com/hak5/usbrubberducky-payloads). For a fun test, use the [Rickroll script](https://github.com/hak5/usbrubberducky-payloads/blob/master/payloads/library/prank/Rickroll%2BBSOD/payload.dd). Copy the text, paste into a new file, and save as `payload.dd`.  
+- **Option A (Original Sources):** Browse payloads from [Hak5 USB Rubber Ducky Payloads](https://github.com/hak5/usbrubberducky-payloads).   
 - **Option B (Direct):** Use example payloads from the `/scripts` folder in this repository (e.g., `rickroll.dd`). Rename to `payload.dd` if needed.  
 
 Copy `payload.dd` to the root of the "CIRCUITPY" drive.  

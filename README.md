@@ -26,14 +26,14 @@ Hold down the BOOTSEL button on your Raspberry Pi Pico (or Pico W) while pluggin
 ### Step 2: Format the Board (Optional but Recommended)
 This clears any existing data to avoid issues.  
 - **Option A (Original Source):** Download `flash_nuke.uf2` from [Mega.nz](https://mega.nz/file/8vIDgArS#CKuRw15vM3WzhA6j1P0y7U5iA2gRpjtfhXAJ3A3y8wA).  
-- **Option B (Direct):** Use `flash_nuke.uf2` from the `/tools` folder in this repository.  
+- **Option B (Direct):** Use `format.uf2` from the `/root` folder in this repository.  
 
 Copy the `.uf2` file to the Pico's drive. Wait for it to reboot automatically (the drive will disappear and reappear).
 
 ### Step 3: Install CircuitPython Firmware
 This enables Python scripting on the Pico.  
 - **Option A (Original Source):** Download the `.uf2` file for your board from [CircuitPython.org](https://circuitpython.org/board/raspberry_pi_pico/) (for Pico) or [CircuitPython.org Pico W](https://circuitpython.org/board/raspberry_pi_pico_w/).  
-- **Option B (Direct):** Use `circuitpython.uf2` (for Pico) or `circuitpython_w.uf2` (for Pico W) from the `/firmware` folder in this repository.  
+- **Option B (Direct):** Use `circuitpython.uf2`  from the `/root` folder in this repository.  
 
 Copy the `.uf2` file to the Pico's drive. Wait for reboot. The drive should now be named "CIRCUITPY".
 
@@ -54,7 +54,7 @@ Copy the file to the root of the "CIRCUITPY" drive. Delete any existing `code.py
 
 ### Step 6: Add a Payload Script
 Payloads are scripts that run as keyboard inputs (e.g., opening apps, typing commands). For examples:  
-- **Option A (Original Sources):** Browse payloads from [Hak5 USB Rubber Ducky Payloads](https://github.com/hak5/usbrubberducky-payloads). For a fun test, use the [Rickroll script](https://github.com/hak5/usbrubberducky-payloads/blob/master/payloads/library/prank/Rickroll/payload.txt). Copy the text, paste into a new file, and save as `payload.dd`.  
+- **Option A (Original Sources):** Browse payloads from [Hak5 USB Rubber Ducky Payloads](https://github.com/hak5/usbrubberducky-payloads). For a fun test, use the [Rickroll script](https://github.com/hak5/usbrubberducky-payloads/blob/master/payloads/library/prank/Rickroll%2BBSOD/payload.dd). Copy the text, paste into a new file, and save as `payload.dd`.  
 - **Option B (Direct):** Use example payloads from the `/scripts` folder in this repository (e.g., `rickroll.dd`). Rename to `payload.dd` if needed.  
 
 Copy `payload.dd` to the root of the "CIRCUITPY" drive.  

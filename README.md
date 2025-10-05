@@ -135,3 +135,5 @@ Run it on the target, note mismatches, and adjust your payloads (e.g., for Spani
 
 If you encounter issues, check the console output or contribute to this repo!
 
+NOTE: Important — this repository only works with the Raspberry Pi Pico W version 2
+
